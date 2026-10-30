@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An inspectable legal content analysis of 12 selected Supreme Court judgments on PMLA bail, Section 45, and constitutional liberty.">
+<title>PMLA Bail | Supreme Court Judgment Analysis</title>
+<style>
+:root{--navy:#11263f;--ink:#17314c;--muted:#65768a;--teal:#168f91;--gold:#cd9254;--border:#dfebed;--bg:#f5f8fa;--paper:white;--soft:#eaf2f6;--rad:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);line-height:1.58}
+a{color:#155f80}a:hover{text-decoration-color:var(--teal)}button,select,input{font:inherit}
+.wrap{max-width:1200px;margin:auto;padding:0 28px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:20px;top:20px;background:white;z-index:100;padding:10px}
+.topbar{background:#fff;position:sticky;top:0;z-index:12;border-bottom:1px solid var(--border)}
+.topbar .wrap{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.wordmark{color:var(--navy);font-weight:800;letter-spacing:-.03em;font-size:18px;text-decoration:none}
+.wordmark span{color:var(--teal)}nav{display:flex;gap:20px;flex-wrap:wrap}nav a{text-decoration:none;color:var(--muted);font-size:13px;font-weight:650}
+nav a:hover{color:var(--teal)}
+.hero{background:linear-gradient(112deg,#112b48 0%,#163f5b 60%,#0e6a73 100%);color:white;padding:82px 0 72px;overflow:hidden}
+.eyebrow{text-transform:uppercase;letter-spacing:.19em;font-size:12px;font-weight:800;color:#9adee1}
+h1{font-size:clamp(2.3rem,5vw,4.7rem);line-height:1.09;letter-spacing:-.055em;max-width:850px;margin:14px 0 25px;font-weight:780}
+.lede{font-size:clamp(16px,1.9vw,20px);color:#dce9f0;max-width:770px;line-height:1.75}
+.meta{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0}
+.pill{border-radius:99px;border:1px solid #85b6c2;padding:6px 14px;font-size:12px;font-weight:750;color:#e9fdff}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.action{display:inline-block;background:#fff;color:#12435c;text-decoration:none;padding:12px 19px;border-radius:11px;font-weight:800;font-size:13px}
+.action.secondary{background:transparent;border:1px solid #83b5bd;color:white}
+main section{padding:64px 0 0}h2{font-size:clamp(1.65rem,3vw,2.45rem);letter-spacing:-.035em;margin:0 0 16px;color:var(--navy)}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:24px}
+.section-head p{margin:0;max-width:740px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-29px;position:relative}
+.stat{padding:25px 23px;border:1px solid var(--border);box-shadow:0 8px 22px #1534490a;border-radius:var(--rad);background:white}
+.stat .number{font-size:38px;font-weight:850;letter-spacing:-.06em;color:var(--navy);line-height:1}
+.stat .label{font-size:12px;margin-top:12px;color:var(--muted);font-weight:720;text-transform:uppercase;letter-spacing:.06em}
+.chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:19px}
+.chart-card{background:#fff;border:1px solid var(--border);border-radius:var(--rad);overflow:hidden;box-shadow:0 7px 18px #12304506}
+.chart-card:first-child{grid-column:span 2}
+.chart-card img{width:100%;height:auto;display:block;object-fit:contain}
+.chart-note{padding:12px 27px 25px;color:var(--muted);font-size:14px;margin:0}
+.chart-note strong{color:var(--navy)}
+.note{background:#fff7e9;border-left:4px solid #cf9749;border-radius:0 12px 12px 0;padding:16px 20px;font-size:14px;margin:21px 0 0;color:#745226}
+.analysis-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.story{background:white;padding:28px;border:1px solid var(--border);border-radius:var(--rad)}
+.story .date{color:var(--teal);letter-spacing:.1em;font-weight:800;font-size:12px;text-transform:uppercase}
+.story h3{font-size:20px;line-height:1.27;letter-spacing:-.025em;margin:12px 0;color:var(--navy)}
+.story p{font-size:14px;color:#52657b;margin-bottom:0}
+.filterbar{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 15px}
+.filterbar label{font-weight:700;font-size:12px;color:var(--muted);display:block;margin:0 0 5px}
+.filterbar input,.filterbar select{height:44px;padding:9px 12px;border:1px solid #bfd0d9;border-radius:9px;background:white;color:var(--navy);min-width:165px}
+.filterbar .search{flex:2;min-width:250px}.filterbar .search input{width:100%}
+.filterbar .filter{flex:1;min-width:160px}.filterbar select{width:100%}
+.tablebox{overflow:auto;border:1px solid var(--border);border-radius:14px;background:white}
+table{border-collapse:collapse;width:100%;min-width:910px;font-size:13px}
+thead{background:var(--navy);color:white;text-align:left}
+th{padding:16px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+td{padding:15px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:last-child td{border:0}tbody tr:hover{background:#f1f8fa}
+.case-title{font-weight:760;color:var(--navy);line-height:1.35}
+.fine{font-size:12px;color:var(--muted);display:block;margin-top:5px}
+.result{font-size:11px;border-radius:100px;padding:4px 9px;display:inline-block;background:#ebf6f6;color:#17757b;font-weight:800}
+.result.dismissed{color:#7c5a24;background:#fbf2e5}
+.source{white-space:nowrap;font-weight:800}
+#count{font-size:13px;color:var(--muted);margin:0 0 11px}
+.method{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.method>div{padding:27px;border:1px solid var(--border);background:white;border-radius:var(--rad)}
+.method h3{color:var(--navy);font-size:18px;margin:0 0 12px}
+.method p,.method li{font-size:14px;color:#51657a}
+.method ul{padding-left:20px}
+.downloads{display:flex;flex-wrap:wrap;gap:12px;margin-top:19px}
+.downloads a{border:1px solid #aac6d0;border-radius:11px;padding:11px 15px;text-decoration:none;font-weight:800;font-size:13px}
+.footer{padding:42px 0;margin-top:70px;border-top:1px solid var(--border);background:#eaf1f5;color:#587183;font-size:13px}
+.footer strong{color:var(--navy)}
+@media(max-width:850px){.stats{grid-template-columns:repeat(2,1fr)}.method{grid-template-columns:1fr}.chart-grid{grid-template-columns:1fr}.chart-card:first-child{grid-column:span 1}.analysis-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{padding:0 19px}.hero{padding:59px 0 65px}.topbar .wrap{padding-top:12px;padding-bottom:12px;align-items:flex-start;flex-direction:column;gap:9px}nav{gap:13px}.stats{grid-template-columns:repeat(2,1fr);gap:10px}.stat{padding:18px 16px}.stat .number{font-size:30px}main section{padding-top:50px}.story{padding:22px}}
+@media print{.topbar,.filterbar,.hero-actions,.downloads{display:none}.hero{color:black;background:white;padding:26px 0}.hero .lede,.hero .eyebrow{color:#333}.stats{margin-top:0}.chart-card,.story{break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap">
+<a class="wordmark" href="#top">JUSTICE<span> / DATA</span></a>
+<nav aria-label="Primary navigation"><a href="#charts">Visuals</a><a href="#evolution">Doctrine</a><a href="#judgments">Judgments</a><a href="#method">Methodology</a></nav>
+</div></header>
+<div id="top" class="hero"><div class="wrap">
+<div class="eyebrow">Supreme Court of India · legal content analysis</div>
+<h1>Bail, balancing &amp; the boundaries of Section 45.</h1>
+<p class="lede">A judgment-level exploration of PMLA bail, trial delay, and constitutional liberty. Twelve selected, reasoned decisions, three charts, and an inspectable official-source-linked dataset.</p>
+<div class="meta"><span class="pill">1 September 2021 – 31 August 2026</span><span class="pill">Supreme Court</span><span class="pill">12 coded rulings</span></div>
+<div class="hero-actions"><a class="action" href="#charts">Explore the analysis</a><a class="action secondary" href="data.csv" download>Download CSV</a></div>
+</div></div>
+<main id="main" class="wrap">
+<div class="stats" aria-label="Dataset snapshot">
+<div class="stat"><div class="number">12</div><div class="label">Rulings coded</div></div>
+<div class="stat"><div class="number">9</div><div class="label">Appeals allowed</div></div>
+<div class="stat"><div class="number">3</div><div class="label">Appeals dismissed</div></div>
+<div class="stat"><div class="number">5</div><div class="label">Decisions primarily about delay</div></div>
+</div>
+
+<section id="charts">
+<div class="section-head"><div><h2>Three views of the data</h2><p>These charts count judgments, not individual accused persons, applications, or separate appeals disposed of in a common judgment.</p></div></div>
+<div class="chart-grid">
+<article class="chart-card"><img src="chart1-per-year.png" alt="Yearly decision counts: 2021 zero, 2022 zero, 2023 one, 2024 six, 2025 four, 2026 one." loading="lazy"><p class="chart-note"><strong>Temporal concentration.</strong> Six of the twelve coded decisions occurred in 2024. The selected 2021 and 2022 counts are zero; this does not establish that no such decisions exist.</p></article>
+<article class="chart-card"><img src="chart2-outcomes.png" alt="Formal appeal results: nine allowed, three dismissed." loading="lazy"><p class="chart-note"><strong>Formal result.</strong> An allowed appeal may favour either the accused or the prosecution, depending on who appealed.</p></article>
+<article class="chart-card"><img src="chart3-who-won.png" alt="Practical beneficiaries: nine individuals and three state or public bodies." loading="lazy"><p class="chart-note"><strong>Practical beneficiary.</strong> This separate code avoids equating an allowed appeal with bail granted to a person.</p></article>
+</div>
+<p class="note"><strong>Scope note:</strong> This is a deliberately selected corpus of 12 reasoned judgments, not an exhaustive census of all Supreme Court PMLA bail decisions between 1 September 2021 and 31 August 2026. Conclusions describe this corpus only.</p>
+</section>
+
+<section id="evolution">
+<div class="section-head"><div><h2>Doctrinal evolution</h2><p>The cases reveal several coexisting routes to or restrictions on liberty, rather than a uniformly pro- or anti-bail trend.</p></div></div>
+<div class="analysis-grid">
+<article class="story"><div class="date">October 2023 – March 2024</div><h3>The Section 45 threshold remains stringent</h3><p><em>Manish Sisodia (2023)</em> and <em>Satyendar Kumar Jain</em> refused bail on their records, while recognising that unreasonable pretrial delay may change the liberty analysis. The decisions do not make serious allegations an automatic answer to Article 21.</p></article>
+<article class="story"><div class="date">May – August 2024</div><h3>Procedure, evidence, and statutory exceptions</h3><p><em>Tarsem Lal</em> explained why appearance on summons and an appearance bond do not themselves require bail (paras 15, 21–25); <em>Kalvakuntla Kavitha</em> addressed Section 45's proviso for women; <em>Prem Prakash</em> considered statements and whether the prima facie material met Section 45 (paras 32–45).</p></article>
+<article class="story"><div class="date">January – February 2025</div><h3>Constitutional arrest safeguards remain distinct</h3><p><em>Subhash Sharma</em> held that failure to produce the arrested person within the constitutionally required period vitiated custody; the Section 45 twin test could not save that arrest (paras 6–10). In contrast, <em>Kanhaiya Prasad</em> required the High Court to evaluate Section 45 when granting ordinary bail.</p></article>
+<article class="story"><div class="date">August 2024 – January 2026</div><h3>Prolonged detention and trial feasibility</h3><p><em>Manish Sisodia (2024)</em>, <em>V. Senthil Balaji</em>, <em>Udhaw Singh</em>, <em>Mahesh Joshi</em> and <em>Arvind Dham</em> show how long custody, witness lists, seized records and actual trial progress may engage Article 21. <em>Mahesh Joshi</em> discusses this balance in paras 13–16; <em>Arvind Dham</em> in paras 15–23.</p></article>
+</div></section>
+
+<section id="judgments">
+<div class="section-head"><div><h2>Explore the 12 selected judgments</h2><p>Search case names, provisions, issues, holdings or precedents. Open the source column to inspect the judgment on the Supreme Court's own website.</p></div></div>
+<div class="filterbar">
+<div class="search"><label for="search">Find a case or term</label><input id="search" type="search" placeholder="e.g. Article 21, Tarsem Lal, Section 45" autocomplete="off"></div>
+<div class="filter"><label for="year">Year</label><select id="year"><option value="">All years</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option></select></div>
+<div class="filter"><label for="outcome">Appeal result</label><select id="outcome"><option value="">All outcomes</option><option>Allowed</option><option>Dismissed</option></select></div>
+<div class="filter"><label for="theme">Main analysis theme</label><select id="theme"><option value="">All themes</option><option>Strict test / safeguards</option><option>Arrest / procedural protection</option><option>Delay / Article 21</option><option>Statutory exception / discretion</option></select></div>
+</div>
+<p id="count" aria-live="polite">Showing 12 judgments</p>
+<div class="tablebox"><table><thead><tr><th>Case and citation</th><th>Decision</th><th>Disposition</th><th>Beneficiary</th><th>Core issue and holding</th><th>Official PDF</th></tr></thead><tbody id="rows"></tbody></table></div>
+</section>
+
+<section id="method">
+<div class="section-head"><div><h2>Method, scope and reproducibility</h2><p>The selection rule and coding conventions matter as much as the numerical totals.</p></div></div>
+<div class="method">
+<div><h3>Case selection and coding</h3><ul>
+<li>Court: Supreme Court of India; assignment period: 1 September 2021 to 31 August 2026.</li>
+<li>Corpus: 12 selected, reasoned judgments about PMLA bail or closely connected custody and court-appearance safeguards; it is not a complete census of all qualifying decisions.</li>
+<li>Discovery used case-name and PMLA bail terms with the Court's official judgment repository; secondary search results served only as discovery aids. The official Supreme Court PDF is cited for every record.</li>
+<li>One record per reasoned judgment, even where connected appeals were disposed of together; the outcome records the appeal result, and the beneficiary is coded separately.</li>
+<li>Spreadsheet categorical values follow the prescribed controlled vocabulary. This page's four analytical themes are interpretive annotations, not additional Excel columns.</li>
+</ul></div>
+<div><h3>Sources and responsible AI use</h3><p>ChatGPT was used for initial research support, suggested coding, legal-detail cross-checks, chart creation and site/README drafting. Official Supreme Court PDFs, rather than headnotes, are the recorded primary sources. The 'Coded by' field retains the team members named in the submitted workbook.</p><p>The selected-case approach limits generalisations: the charts do not estimate the Court's overall bail grant rate or represent all eligible decisions. Read the judgment linked beside each case for its full facts, reasoning and final directions.</p><div class="downloads"><a href="data.xlsx" download>Excel workbook</a><a href="data.csv" download>CSV dataset</a><a href="README.md">Research README</a><a href="https://github.com/swastisharmaa04-coder/pmla-bail-judgments" target="_blank" rel="noopener noreferrer">GitHub repository</a></div></div>
+</div>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><strong>Doctrinal Evolution / PMLA Bail</strong> · Supreme Court of India · Selected 12-judgment legal content analysis. Team: Swasti Sharma (D), Ishtartha H. R. (D), Palak Manik (D). Official judicial texts are linked in each case record.</div></footer>
+<script>
+const CASES = [{"name":"Manish Sisodia v. Central Bureau of Investigation","cite":"2023 INSC 956","date":"30-10-2023","year":2023,"bench":2,"typ":"Criminal appeal","brought":"Individual","outcome":"Dismissed","won":"State or public body","provision":"s 45 PMLA; Art 21; ss 439, 436A CrPC","issue":"Whether bail should be granted in linked corruption and PMLA cases given the evidence and likely trial length.","holding":"Bail refused on the record then available; the Court preserved a fresh application if the trial failed to advance promptly.","precedent":"Vijay Madanlal Choudhary v. Union of India","url":"https://api.sci.gov.in/supremecourt/2023/26668/26668_2023_3_1501_47839_Judgement_30-Oct-2023.pdf","theme":"Strict test / safeguards"},{"name":"Satyendar Kumar Jain v. Directorate of Enforcement","cite":"2024 INSC 217","date":"18-03-2024","year":2024,"bench":2,"typ":"Criminal appeal","brought":"Individual","outcome":"Dismissed","won":"State or public body","provision":"s 45 PMLA; Art 21; s 436A CrPC","issue":"Whether the accused met Section 45's twin bail requirements in alleged laundering through corporate entities.","holding":"The appeals failed because the materials did not satisfy the statutory bail conditions; speedy-trial rights were nevertheless affirmed.","precedent":"Vijay Madanlal Choudhary v. Union of India","url":"https://api.sci.gov.in/supremecourt/2023/20478/20478_2023_15_1501_51515_Judgement_18-Mar-2024.pdf","theme":"Strict test / safeguards"},{"name":"Tarsem Lal v. Directorate of Enforcement, Jalandhar Zonal Office","cite":"2024 INSC 434","date":"16-05-2024","year":2024,"bench":2,"typ":"Criminal appeal","brought":"Individual","outcome":"Allowed","won":"Individual","provision":"ss 19, 44, 45 PMLA; ss 88, 70(2) CrPC","issue":"Whether a PMLA accused not arrested before cognizance must apply for bail after appearing on summons, and how outstanding warrants should be treated.","holding":"The appeals were allowed and warrants made cancellable on specified conditions; an accused appearing on summons need not seek bail, so anticipatory bail was unnecessary.","precedent":"Satender Kumar Antil v. Central Bureau of Investigation","url":"https://api.sci.gov.in/supremecourt/2023/53731/53731_2023_7_1502_53220_Judgement_16-May-2024.pdf","theme":"Arrest / procedural protection"},{"name":"Manish Sisodia v. Directorate of Enforcement","cite":"2024 INSC 595","date":"09-08-2024","year":2024,"bench":2,"typ":"Criminal appeal","brought":"Individual","outcome":"Allowed","won":"Individual","provision":"s 45 PMLA; Art 21","issue":"Whether continued custody without a timely trial justified granting bail on renewed applications.","holding":"Both bail appeals were allowed because prolonged pretrial detention and slow progress outweighed continued incarceration on the facts.","precedent":"Manish Sisodia v. Central Bureau of Investigation (2023)","url":"https://api.sci.gov.in/supremecourt/2024/29266/29266_2024_3_1501_54588_Judgement_09-Aug-2024.pdf","theme":"Delay / Article 21"},{"name":"Kalvakuntla Kavitha v. Directorate of Enforcement","cite":"2024 INSC 632","date":"27-08-2024","year":2024,"bench":2,"typ":"Criminal appeal","brought":"Individual","outcome":"Allowed","won":"Individual","provision":"proviso to s 45(1) PMLA","issue":"Whether a woman accused under the PMLA could be denied the statutory proviso solely because of her education or status.","holding":"Bail was granted; the proviso for women could not be narrowed merely by describing the applicant as educated or influential.","precedent":"Saumya Chaurasia v. Directorate of Enforcement","url":"https://api.sci.gov.in/supremecourt/2024/35524/35524_2024_3_19_55112_Judgement_27-Aug-2024.pdf","theme":"Statutory exception / discretion"},{"name":"Prem Prakash v. Union of India through the Directorate of Enforcement","cite":"2024 INSC 637","date":"28-08-2024","year":2024,"bench":2,"typ":"Criminal appeal","brought":"Individual","outcome":"Allowed","won":"Individual","provision":"ss 45, 50 PMLA; Arts 20(3), 21","issue":"Whether Section 50 statements and the other prima facie evidence satisfied Section 45 when determining regular bail in a land-transaction laundering case.","holding":"The Court found the Section 45 twin conditions satisfied on the prima facie record, addressed the use of custody-obtained statements and ordered release on bail.","precedent":"Vijay Madanlal Choudhary v. Union of India","url":"https://api.sci.gov.in/supremecourt/2024/15608/15608_2024_3_1501_55095_Judgement_28-Aug-2024.pdf","theme":"Statutory exception / discretion"},{"name":"V. Senthil Balaji v. Deputy Director, Directorate of Enforcement","cite":"2024 INSC 739","date":"26-09-2024","year":2024,"bench":2,"typ":"Criminal appeal","brought":"Individual","outcome":"Allowed","won":"Individual","provision":"s 45 PMLA; Art 21","issue":"Whether a lengthy likely trial and continuing incarceration warranted bail notwithstanding PMLA restrictions.","holding":"The applicant was released on bail in view of extended custody and the absence of a realistic prospect of speedy completion of trial.","precedent":"Manish Sisodia v. Directorate of Enforcement (2024)","url":"https://api.sci.gov.in/supremecourt/2024/12721/12721_2024_6_1501_56009_Judgement_26-Sep-2024.pdf","theme":"Delay / Article 21"},{"name":"Directorate of Enforcement v. Subhash Sharma","cite":"2025 INSC 141","date":"21-01-2025","year":2025,"bench":2,"typ":"Criminal appeal","brought":"State or public body","outcome":"Dismissed","won":"Individual","provision":"Arts 21, 22(2); s 57 CrPC; ss 45, 65 PMLA","issue":"Whether failure to produce a detained PMLA accused before a Magistrate within 24 hours vitiated arrest despite Section 45 bail restrictions.","holding":"Dismissing the ED appeal, the Court upheld bail because unconstitutional detention violated Article 22(2), and Section 45 could not cure the unlawful arrest.","precedent":"None cited","url":"https://api.sci.gov.in/supremecourt/2022/42431/42431_2022_5_14_58599_Judgement_21-Jan-2025.pdf","theme":"Arrest / procedural protection"},{"name":"Union of India through Assistant Director v. Kanhaiya Prasad","cite":"2025 INSC 210","date":"13-02-2025","year":2025,"bench":2,"typ":"Criminal appeal","brought":"State or public body","outcome":"Allowed","won":"State or public body","provision":"s 45 PMLA","issue":"Whether the High Court could release a PMLA accused without addressing Section 45's mandatory conditions.","holding":"The Court allowed the ED appeal, set aside the bail order for failure to apply Section 45, and directed surrender before fresh High Court consideration.","precedent":"Vijay Madanlal Choudhary v. Union of India","url":"https://api.sci.gov.in/supremecourt/2024/22780/22780_2024_9_1501_59321_Judgement_13-Feb-2025.pdf","theme":"Strict test / safeguards"},{"name":"Udhaw Singh v. Enforcement Directorate","cite":"2025 INSC 247","date":"17-02-2025","year":2025,"bench":2,"typ":"Criminal appeal","brought":"Individual","outcome":"Allowed","won":"Individual","provision":"s 45 PMLA; Art 21","issue":"Whether lack of trial progress after prolonged custody outweighed objections under Section 45.","holding":"Bail was granted because 14 months of custody and examination of only one of 225 witnesses made early completion of trial unlikely under Article 21.","precedent":"V. Senthil Balaji v. Deputy Director, Directorate of Enforcement","url":"https://api.sci.gov.in/supremecourt/2024/56374/56374_2024_4_6_59497_Judgement_17-Feb-2025.pdf","theme":"Delay / Article 21"},{"name":"Mahesh Joshi v. Directorate of Enforcement","cite":"2025 INSC 1377","date":"03-12-2025","year":2025,"bench":2,"typ":"Criminal appeal","brought":"Individual","outcome":"Allowed","won":"Individual","provision":"s 45 PMLA; Art 21","issue":"Whether continued custody was justified where the older accused faced a document-heavy trial unlikely to finish within a reasonable time.","holding":"Conditional bail was granted given over seven months of custody, 66 witnesses, extensive documents, the appellant’s age and the remote prospect of an early trial.","precedent":"V. Senthil Balaji v. Deputy Director, Directorate of Enforcement","url":"https://api.sci.gov.in/supremecourt/2025/50042/50042_2025_8_1501_66469_FinalOrder_03-Dec-2025.pdf","theme":"Delay / Article 21"},{"name":"Arvind Dham v. Directorate of Enforcement","cite":"2026 INSC 12","date":"06-01-2026","year":2026,"bench":2,"typ":"Criminal appeal","brought":"Individual","outcome":"Allowed","won":"Individual","provision":"s 45 PMLA; s 483 BNSS; Art 21","issue":"Whether lengthy custody and an uncommenced, complex trial permitted release in a financial-crime prosecution.","holding":"Bail was allowed because continued detention amid a large, uncommenced trial would undermine Article 21, notwithstanding the gravity of the alleged economic offences.","precedent":"V. Senthil Balaji v. Deputy Director, Directorate of Enforcement","url":"https://api.sci.gov.in/supremecourt/2025/55164/55164_2025_6_1502_67227_Judgement_06-Jan-2026.pdf","theme":"Delay / Article 21"}];
+const $=id=>document.getElementById(id);
+const escapeText=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function render(){
+const q=$("search").value.trim().toLowerCase(), y=$("year").value, o=$("outcome").value, t=$("theme").value;
+const visible=CASES.filter(x=>(!y||String(x.year)===y)&&(!o||x.outcome===o)&&(!t||x.theme===t)&&(!q||[x.name,x.cite,x.issue,x.holding,x.provision,x.precedent,x.theme].join(" ").toLowerCase().includes(q)));
+$("count").textContent=`Showing ${visible.length} of ${CASES.length} judgments`;
+$("rows").innerHTML=visible.map(x=>`<tr><td><span class="case-title">${escapeText(x.name)}</span><span class="fine">${escapeText(x.cite)} · ${escapeText(x.theme)}</span></td><td>${escapeText(x.date)}</td><td><span class="result ${x.outcome==="Dismissed"?"dismissed":""}">${escapeText(x.outcome)}</span></td><td>${escapeText(x.won)}</td><td><strong>Issue:</strong> ${escapeText(x.issue)}<br><strong>Holding:</strong> ${escapeText(x.holding)}<span class="fine">Main provision: ${escapeText(x.provision)}</span></td><td><a class="source" href="${escapeText(x.url)}" target="_blank" rel="noopener noreferrer" aria-label="Official Supreme Court PDF for ${escapeText(x.name)}">Judgment ↗</a></td></tr>`).join("") || `<tr><td colspan="6">No judgments match those filters.</td></tr>`;
+}
+["search","year","outcome","theme"].forEach(id=>$(id).addEventListener("input",render));
+render();
+</script>
+</body></html>
